@@ -46,6 +46,19 @@ def line_plot():
         return f'<img src="data:image/png;base64,{plot_url}"/>'
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/visualization/bar', methods=['GET'])
+def bar_plot():
+    try:
+        df = load_data()
+        def plot():
+            df.head(10).plot.bar(x='Date', y='Volume', title='Bar Plot of Volume (Top 10 Days)')
+            plt.xlabel('Date')
+            plt.ylabel('Volume')
+        plot_url = generate_plot(plot)
+        return f'<img src="data:image/png;base64,{plot_url}"/>'
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

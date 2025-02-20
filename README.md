@@ -14,6 +14,8 @@
 
 ### 3rd Commit
 
+- Initialized Bar Plot: Displays volumes for the top 10 days '(/visualization/bar)'
+
 ### 4th Commit
 
 ### 5th Commit
