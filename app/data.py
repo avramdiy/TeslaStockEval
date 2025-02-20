@@ -71,6 +71,19 @@ def histogram():
         return f'<img src="data:image/png;base64,{plot_url}"/>'
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/visualization/scatter', methods=['GET'])
+def scatter_plot():
+    try:
+        df = load_data()
+        def plot():
+            df.plot.scatter(x='Open', y='Close', title='Scatter Plot of Open vs Close Prices')
+            plt.xlabel('Open Price')
+            plt.ylabel('Close Price')
+        plot_url = generate_plot(plot)
+        return f'<img src="data:image/png;base64,{plot_url}"/>'
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

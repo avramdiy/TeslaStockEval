@@ -21,3 +21,5 @@
 - Initialized Histogram: Displays the distribution of closing prices '(/visualization/hist)'
 
 ### 5th Commit
+
+- Initialized Scatter Plot: Compares open and close prices '(/visualization/scatter)'
