@@ -18,4 +18,6 @@
 
 ### 4th Commit
 
+- Initialized Histogram: Displays the distribution of closing prices '(/visualization/hist)'
+
 ### 5th Commit
